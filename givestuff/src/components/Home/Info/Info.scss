@@ -1,0 +1,36 @@
+@import "src/scss/settings/colors";
+
+.header__info{
+  width: 40vw;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .info--title{
+    text-align: center;
+    font-size: 38px;
+  }
+  .info--decoration{
+    margin-top: 2em;
+  }
+  .info--buttons{
+    font-size: 36px;
+    margin-top: 2em;
+    display: flex;
+    text-align: center;
+    div {
+      width: 9em;
+      height: 3em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 0.75px solid $color-text;
+      margin: 0.5em;
+      color: $color-text;
+    }
+    a{
+      text-decoration: none;
+    }
+  }
+}

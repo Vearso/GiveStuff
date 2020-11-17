@@ -2,7 +2,9 @@
 @import "src/scss/settings/colors";
 @import "src/scss/settings/fonts";
 
-
+*{
+  box-sizing: border-box;
+}
 body {
   font-family: $font-base;
 }

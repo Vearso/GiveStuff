@@ -1,0 +1,14 @@
+@import "src/scss/settings/colors";
+
+.home__threeColumns{
+  width: 100%;
+  height: 20em;
+  background-color: $color-main;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  article {
+    width: 20%;
+    text-align: center;
+  }
+}
