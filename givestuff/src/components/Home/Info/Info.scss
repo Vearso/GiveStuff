@@ -1,24 +1,23 @@
 @import "src/scss/settings/colors";
 
-.header__info{
+.header__info {
   width: 40vw;
   height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  .info--title{
+
+  .info--title {
     text-align: center;
     font-size: 38px;
   }
-  .info--decoration{
+
+  .info--decoration {
     margin-top: 2em;
   }
-  .info--buttons{
-    font-size: 36px;
-    margin-top: 2em;
-    display: flex;
-    text-align: center;
+
+  .info--buttons {
     div {
       width: 9em;
       height: 3em;
@@ -29,8 +28,18 @@
       margin: 0.5em;
       color: $color-text;
     }
-    a{
+
+    a {
       text-decoration: none;
     }
   }
+}
+
+
+.info--buttons {
+  font-size: 36px;
+  margin-top: 2em;
+  display: flex;
+  text-align: center;
+  border: none;
 }

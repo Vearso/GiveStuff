@@ -1,0 +1,49 @@
+@import "src/scss/settings/colors";
+
+.home__steps{
+  width: 100%;
+  text-align: center;
+  .steps__title{
+    margin-top: 30px;
+    padding: 25px 0;
+    font-size: 38px;
+  }
+  .steps__decoration{
+    margin-bottom: 34px;
+  }
+  .steps__container{
+    display: flex;
+    justify-content: center;
+    background-color: $color-background;
+    .section__article{
+      width: 17%;
+      padding: 71px 86px;
+      span{
+        margin: 0;
+      }
+      div {
+        width: 70px;
+        margin: 10.5px;
+        border-bottom: 1px solid $color-description;
+      }
+    }
+  }
+  .info--buttons{
+    display: flex;
+    justify-content: center;
+    a {
+      margin-top: 35px;
+      margin-bottom: 85px;
+      text-decoration: none;
+      div {
+        width: 9em;
+        height: 3em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 0.75px solid $color-text;
+        color: $color-text;
+      }
+    }
+  }
+}
