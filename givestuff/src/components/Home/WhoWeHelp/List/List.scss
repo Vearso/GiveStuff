@@ -1,0 +1,50 @@
+@import "src/scss/settings/fonts";
+@import "src/scss/settings/colors";
+
+.whoWeHelp__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ .list--description {
+   text-align: center;
+   font-size: 22px;
+   width: 35%;
+   margin-bottom: 66px;
+ }
+  .list {
+    width: 80vw;
+
+    .list--element{
+      font-family: $font-alt;
+      font-weight: lighter;
+      display: flex;
+      justify-content: space-between;
+      height: 81px;
+      margin-bottom: 34px;
+      border-bottom: 1px solid $color-description;
+      .element--description{
+        .element--title{
+        font-size: 26px;
+        }
+        .element--purpose{
+        font-size: 18px;
+          ;
+        }
+      }
+      .element--stuff{
+
+      }
+    }
+  }
+  .list--pagination{
+    display: flex;
+    .pagination--number{
+      padding: 13px 15px;
+      margin-left: 20px;
+    }
+    .active {
+      border: 1px solid $color-text;
+    }
+  }
+}
