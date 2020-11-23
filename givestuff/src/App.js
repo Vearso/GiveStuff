@@ -6,12 +6,17 @@ import {
 } from "react-router-dom";
 import * as ROUTES from './routes';
 import Home from "./layouts/Home";
+import Firebase, { FirebaseContext } from "./firebase";
+import SignIn from "./layouts/SignIn";
 
 function App() {
     return (
         <Router>
             <Switch>
-                <Route exact path={ROUTES.HOME} component={Home}/>
+                <FirebaseContext.Provider value={new Firebase()}>
+                    <Route exact path={ROUTES.HOME} component={Home}/>
+                    <Route path={ROUTES.SIGN_IN} component={SignIn}/>
+                </FirebaseContext.Provider>
             </Switch>
         </Router>
     );
