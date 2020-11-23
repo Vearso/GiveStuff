@@ -21,19 +21,32 @@
     width: 504px;
     display: flex;
     justify-content: space-between;
-    .button {
-      margin-top: 40px;
-      background: none;
-      padding: 13px 16px;
-      border: 1px solid rgba(0,0,0,0);
-      &:hover {
-        border: 1px solid $color-description;
-      }
-    }
+
   }
+
 }
 
 .section__title{
   font-size: 40px;
   padding: 25px;
+  max-width: 30%;
+  text-align: center;
+  line-height: 60px;
+}
+
+.button {
+  text-decoration: none;
+  color: $color-text;
+  margin-top: 40px;
+  background: none;
+  padding: 13px 16px;
+  border: 1px solid rgba(0,0,0,0);
+  &:hover {
+    border: 1px solid $color-description;
+  }
+}
+
+.button__large {
+  margin: 0;
+  font-size: 28px;
 }

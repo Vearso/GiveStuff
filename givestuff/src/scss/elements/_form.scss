@@ -17,5 +17,14 @@
       margin-top: 20px;
       margin-bottom: 31px;
     }
+    .input__error {
+      border-bottom: 1px solid red;
+    }
+  }
+  .error {
+    max-width: 384px;
+    margin: 10px auto;
+    text-align: center;
+    color: red;
   }
 }

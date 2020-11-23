@@ -1,7 +1,6 @@
 import React from 'react';
 import banner from '../../../assets/Home-Hero-Image.jpg';
 import Navigation from "../Navigation/Navigation";
-import './Header.scss';
 import Info from "../Info/Info";
 
 const Header = () => {

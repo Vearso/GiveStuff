@@ -1,6 +1,6 @@
 import React from 'react'
 import Article from "../Article/Article";
-import './Columns.scss';
+
 
 const Columns = () => {
     return (

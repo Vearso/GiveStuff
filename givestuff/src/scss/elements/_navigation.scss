@@ -1,4 +1,4 @@
-@import "src/scss/settings/colors";
+@import "../settings/colors";
 
 .header__nav{
   width: 40vw;
@@ -28,8 +28,13 @@
     li {
       padding: 9px 20px;
       border: 1px solid rgba(0,0,0,0);
+      a{
+        text-decoration: none;
+        color: $color-text;
+      }
       &:hover{
         border: 1px solid $color-text;
+        cursor: pointer;
       }
     }
   }

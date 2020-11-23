@@ -7,7 +7,7 @@ import {
     selectList, selectPage,
     setPage,
 } from "./listSlice";
-import './List.scss';
+
 
 const List = ({show}) => {
     const list = useSelector(selectList);

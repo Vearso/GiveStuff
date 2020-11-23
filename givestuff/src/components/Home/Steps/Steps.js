@@ -7,11 +7,10 @@ import icon4 from '../../../assets/Icon-4.svg';
 import Article from "../Article/Article";
 import {Link} from "react-router-dom";
 import {SIGN_IN} from "../../../routes";
-import './Steps.scss';
 
 const Steps = () => {
     return (
-        <section className="home__steps">
+        <section className="home__steps" id='steps'>
             <h2 className="steps__title">Wystarczą 4 proste kroki</h2>
             <img className="steps__decoration" src={tribal} alt='page decoration'/>
             <div className="steps__container">

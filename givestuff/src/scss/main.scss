@@ -9,5 +9,16 @@
 body {
   font-family: $font-base;
 }
-@import "elements/signIn";
+@import "elements/account";
 @import "elements/form";
+@import "elements/header";
+@import "elements/navigation";
+@import "elements/columns";
+@import "elements/article";
+@import "elements/steps";
+@import "elements/info";
+@import "elements/about";
+@import "elements/whoWeHelp";
+@import "elements/list";
+@import "elements/contact";
+

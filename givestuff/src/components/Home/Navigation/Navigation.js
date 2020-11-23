@@ -2,7 +2,6 @@ import React from 'react'
 import {Link} from "react-router-dom";
 import * as ROUTES from '../../../routes';
 import {Link as Scroll} from 'react-scroll';
-import './Navigation.scss';
 
 const Navigation = () => {
     return (
@@ -13,15 +12,38 @@ const Navigation = () => {
             </ul>
             <ul className="nav--bottom">
                 <li>
-                    <Scroll activeClass="active"
-                            to='#header'>
+                    <Link to={ROUTES.HOME}>
                         Start
+                    </Link>
+                </li>
+                <li>
+                    <Scroll activeClass="active"
+                            to='steps'
+                            smooth={true}>
+                        O co chodzi?
                     </Scroll>
                 </li>
-                <li>O co chodzi?</li>
-                <li>O nas</li>
-                <li>Fundacja i organizacje</li>
-                <li>Kontakt</li>
+                <li>
+                    <Scroll activeClass="active"
+                            to='about'
+                            smooth={true}>
+                        O nas
+                    </Scroll>
+                </li>
+                <li>
+                    <Scroll activeClass="active"
+                            to='whoWeHelp'
+                            smooth={true}>
+                        Fundacje i organizacje
+                    </Scroll>
+                </li>
+                <li>
+                    <Scroll activeClass="active"
+                            to='contact'
+                            smooth={true}>
+                        Kontakt
+                    </Scroll>
+                </li>
             </ul>
         </nav>
     )

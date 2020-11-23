@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react'
 import tribal from '../../../assets/Decoration.svg';
 import facebook from '../../../assets/Facebook.svg';
 import instagram from '../../../assets/Instagram.svg';
-import './Contact.scss';
 
 const initialState = {
     name: '',
@@ -61,14 +60,25 @@ const Contact = () => {
         }
         if (email.test(form.email) && name.test(form.name) && form.name.split(' ').length === 1 && form.message.length >= 120){
             setSuccess(true);
-
-            //setForm(initialState);
+            setForm(initialState);
         }
+        fetch('https://fer-api.coderslab.pl/v1/portfolio/contact', {
+            method: "POST",
+            body: JSON.stringify(form),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+            .then(r => r.json())
+            .then(data => {
+                console.log(data);
+            })
+            .catch(err => console.warn(err))
     }
     return (
         <div className='background__container'>
             <section/>
-            <section className='page__contact'>
+            <section className='page__contact' id='contact'>
                 <div className='contact__container'>
                     <h2 className="section--title">Skontaktuj się z nami</h2>
                     <img className="section--decoration" src={tribal} alt='decoration'/>

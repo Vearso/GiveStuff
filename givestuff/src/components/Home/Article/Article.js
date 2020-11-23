@@ -1,5 +1,5 @@
 import React from 'react'
-import './Article.scss';
+import '../../../scss/elements/_article.scss';
 const Article = (props) => {
     return(
       <article className='section__article'>

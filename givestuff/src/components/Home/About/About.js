@@ -2,11 +2,10 @@ import React from 'react'
 import people from '../../../assets/People.jpg';
 import tribal from '../../../assets/Decoration.svg';
 import signature from '../../../assets/Signature.svg';
-import './About.scss';
 
 const About = () => {
     return (
-        <section className="home__about">
+        <section className="home__about" id='about'>
             <article className="about__article">
                 <h2 className="article--title">O nas</h2>
                 <img className="article--decoration" src={tribal} alt='decoration'/>

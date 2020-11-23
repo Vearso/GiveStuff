@@ -6,7 +6,6 @@ import {
     showCollections,
     selectShow
 } from "./whoWeHelpSlice";
-import './WhoWeHelp.scss';
 import tribal from '../../../assets/Decoration.svg'
 import List from "./List/List";
 
@@ -15,7 +14,7 @@ const WhoWeHelp = () => {
     const dispatch = useDispatch();
 
     return (
-        <section className='page__whoWeHelp'>
+        <section className='page__whoWeHelp' id='whoWeHelp'>
             <h2 className="section__title">Komu pomagamy ?</h2>
             <img src={tribal} alt='decoration'/>
             <ul className="button__container">

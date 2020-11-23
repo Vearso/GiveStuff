@@ -3,7 +3,6 @@ import {Link} from 'react-router-dom';
 import tribal from '../../../assets/Decoration.svg';
 import {SIGN_IN} from '../../../routes';
 
-import './Info.scss';
 
 const Info = () => {
     return (

@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import {Link, withRouter} from 'react-router-dom';
+import {compose} from "recompose";
 import {withFirebase} from '../../firebase';
 import * as ROUTES from '../../../routes';
 import tribal from '../../../assets/Decoration.svg';
@@ -14,7 +16,9 @@ const SignInPage = () => (
 const initialState = {
     email: '',
     password: '',
-    error: null,
+    error: {
+        code: null,
+    }
 }
 
 class SignInFormBase extends Component {
@@ -34,6 +38,7 @@ class SignInFormBase extends Component {
                 this.props.history.push(ROUTES.HOME);
             })
             .catch(error => {
+                console.log(error);
                 this.setState({error});
             });
 
@@ -51,14 +56,14 @@ class SignInFormBase extends Component {
             <form className='form' onSubmit={this.onSubmit}>
                 <div className="inputs__container">
                     Email
-                    <input className='form__input'
+                    <input className={error.code === 'auth/invalid-email' || error.code === 'auth/user-not-found' ? 'form__input input__error' : 'form__input'}
                            name="email"
                            value={email}
                            onChange={this.onChange}
                            type="text"
                     />
                     Hasło
-                    <input className='form__input'
+                    <input className={error.code === 'auth/wrong-password' ? 'form__input input__error' : 'form__input'}
                            name="password"
                            value={password}
                            onChange={this.onChange}
@@ -79,6 +84,9 @@ class SignInFormBase extends Component {
     }
 }
 
-const SignInForm = withFirebase(SignInFormBase);
+const SignInForm = compose(
+    withFirebase,
+    withRouter,
+)(SignInFormBase);
 
 export default SignInPage;
