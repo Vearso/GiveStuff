@@ -1,0 +1,21 @@
+@import "src/scss/settings/colors";
+.form {
+  margin: 0 auto;
+  .inputs__container{
+    background-color: $color-background;
+    display: flex;
+    margin: 0 auto;
+    padding: 40px 67px 9px 67px;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 384px;
+
+    .form__input{
+      background-color: $color-background;
+      border: none;
+      border-bottom: 1px solid $color-text;
+      margin-top: 20px;
+      margin-bottom: 31px;
+    }
+  }
+}

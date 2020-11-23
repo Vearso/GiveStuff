@@ -12,19 +12,19 @@ const config = {
 
 class Firebase {
     constructor() {
-        app.initializeApp(config);
+        !app.apps.length ? app.initializeApp(config) : app.app();
 
         this.auth = app.auth();
     }
 
     /// AUTH API
 
-    doCreateUserWithEmailAndPassword = (email, password) => {
-        this.auth.createUserWithEmailAndPassword(email,password);
-    }
-    doSignInWithEmailAndPassword = (email, password) => {
+    doCreateUserWithEmailAndPassword = (email, password) =>
+        this.auth.createUserWithEmailAndPassword(email, password);
+
+    doSignInWithEmailAndPassword = (email, password) =>
         this.auth.signInWithEmailAndPassword(email,password);
-    }
+
     doSignOut = () => this.auth.signOut();
 }
 

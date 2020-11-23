@@ -14,8 +14,9 @@
         color: $color-description;
         text-decoration: none;
         padding: 9px 10px;
+        border: 1px solid rgba(0,0,0,0);
         &:hover{
-          border: 0.75px solid $color-main;
+          border: 1px solid $color-main;
         }
       }
     }
@@ -26,8 +27,9 @@
     justify-content: space-between;
     li {
       padding: 9px 20px;
+      border: 1px solid rgba(0,0,0,0);
       &:hover{
-        border: 0.75px solid $color-text;
+        border: 1px solid $color-text;
       }
     }
   }
