@@ -1,0 +1,61 @@
+@import "../settings/colors";
+
+.page__form {
+  width: 100%;
+  .form__container {
+    margin: 0 auto;
+    width: 90%;
+  }
+
+  .form__header {
+    padding: 50px 0;
+    background-color: $color-main;
+
+    .form--title {
+      font-size: 36px;
+      font-weight: bold;
+      line-height: 49px;
+
+    }
+
+    .form--description {
+      font-size: 22px;
+    }
+  }
+
+  .form__content {
+    height: 85vh;
+    background-image: url("../../../src/assets/Background-Form.jpg");
+
+    .form__stepNr {
+      display: block;
+      font-size: 24px;
+      padding-top: 36px;
+      margin-bottom: 70px;
+    }
+
+    .form__steps {
+      .step--title {
+        font-size: 36px;
+        font-weight: bold;
+      }
+      .step--form {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    .button {
+      margin-right: 20px;
+      font-size: 24px;
+      width: 180px;
+      padding: 19px;
+      text-align: center;
+      border: 1px solid $color-text;
+    }
+  }
+
+  .disabled {
+    display: none;
+  }
+}

@@ -33,6 +33,35 @@
       text-decoration: none;
     }
   }
+  .info--subtitle {
+    margin: 19px;
+    font-size: 40px;
+    font-weight: lighter;
+  }
+  .info--steps {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around;
+    width: 85%;
+    .info--step {
+      width: calc(95px * 1.414);
+      height: calc(95px * 1.414);
+      border: 1px solid $color-text;
+      transform: rotate(45deg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .step--text {
+        font-size: 22px;
+        transform: rotate(-45deg);
+        text-align: center;
+        padding-bottom: 10px;
+        p{
+          font-size: 32px;
+        }
+      }
+    }
+  }
 }
 
 
