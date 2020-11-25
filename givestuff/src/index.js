@@ -4,7 +4,7 @@ import './scss/main.scss';
 import {Provider} from 'react-redux';
 import App from './App';
 import store from "./store";
-import Firebase, { FirebaseContext } from "./components/firebase";
+import Firebase, { FirebaseContext } from "./components/Firebase";
 
 ReactDOM.render(
 <FirebaseContext.Provider value={new Firebase()}>

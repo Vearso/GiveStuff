@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
 import {Link, withRouter} from 'react-router-dom';
 import {compose} from "recompose";
-import {withFirebase} from '../../firebase';
+import {withFirebase} from '../../Firebase';
 import * as ROUTES from '../../../routes';
 import tribal from "../../../assets/Decoration.svg";
-
 
 const SignUpPage = () => (
     <div className='account'>

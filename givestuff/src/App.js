@@ -11,8 +11,16 @@ import AccountSignIn from "./layouts/AccountSignIn";
 import AccountSignUp from "./layouts/AccountSignUp";
 import AccountSignOut from "./layouts/AccountSignOut";
 import GiveStuff from "./layouts/GiveStuff";
+import {useDispatch} from 'react-redux';
+import {setUser, signOutUser} from "./userSlice";
+import {withFirebase} from "./components/Firebase/context";
 
-function App() {
+function App({firebase}) {
+    const dispatch = useDispatch();
+    firebase.auth.onAuthStateChanged(user => {
+        user ? dispatch(setUser(user.email)) : dispatch(signOutUser());
+    })
+
     return (
         <Router>
             <Switch>
@@ -26,4 +34,4 @@ function App() {
     );
 }
 
-export default App;
+export default withFirebase(App);
