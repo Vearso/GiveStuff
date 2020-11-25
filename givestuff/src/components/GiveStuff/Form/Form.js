@@ -6,6 +6,7 @@ import {
     selectStep,
 } from "./formSlice";
 import Step from "./Step/Step";
+import {onSubmit} from "./Step/stepSlice";
 
 const Form = () => {
     const step = useSelector(selectStep);
@@ -26,8 +27,10 @@ const Form = () => {
                         <button className={step.step > 1 ? 'button' : 'disabled'}
                                 onClick={() => dispatch(prevStep())}>Wstecz
                         </button>
-                        <button className='button' onClick={() => dispatch(nextStep())}>Dalej</button>
-                    </div>
+                        {step.step < 5 ? <button className='button' onClick={() => dispatch(nextStep())}>Dalej</button>
+                            : <button className='button' onClick={(e)=>onSubmit(e)}>Potwierdzam</button>
+                        }
+                        </div>
                 </div>
             </div>
         </section>

@@ -2,6 +2,7 @@
 
 .page__form {
   width: 100%;
+
   .form__container {
     margin: 0 auto;
     width: 90%;
@@ -24,7 +25,7 @@
   }
 
   .form__content {
-    height: 85vh;
+    min-height: 90vh;
     background-image: url("../../../src/assets/Background-Form.jpg");
 
     .form__stepNr {
@@ -35,27 +36,229 @@
     }
 
     .form__steps {
+      min-height: 55vh;
+
       .step--title {
         font-size: 36px;
         font-weight: bold;
+        margin-bottom: 40px;
       }
+
       .step--form {
         display: flex;
         flex-direction: column;
       }
+
+      .radio {
+        label {
+          position: relative;
+          padding: 21px;
+
+          p {
+            font-size: 24px;
+            margin-left: 70px;
+            line-height: 40px;
+          }
+
+          .step__form--radio {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+          }
+
+          .checkmark {
+            position: absolute;
+            display: block;
+            height: 40px;
+            width: 40px;
+            border: 1px solid $color-text;
+          }
+
+          /* When the checkbox is checked, add a blue background */
+          input:checked ~ .checkmark {
+            background-color: $color-main;
+          }
+        }
+      }
+
+      .checkbox__container {
+        width: 50%;
+        display: flex;
+        flex-wrap: wrap;
+
+        .step__form--checkbox {
+          position: absolute;
+          opacity: 0;
+          cursor: pointer;
+          height: 0;
+          width: 0;
+        }
+
+        .checkmark {
+          font-size: 24px;
+          display: block;
+          border: 1px solid $color-text;
+          padding: 11px 26px;
+          margin-right: 26px;
+          margin-top: 26px;
+        }
+
+        input:checked ~ .checkmark {
+          background-color: $color-main;
+        }
+      }
+
+      .step--subtitle {
+        font-size: 24px;
+        font-weight: bold;
+        margin: 50px 0 20px 0;
+      }
+
+      .step__form--input {
+        width: 300px;
+        height: 40px;
+        background: none;
+        border: 1px solid $color-text;
+      }
+
+    }
+  }
+
+  .button {
+    margin-right: 20px;
+    font-size: 24px;
+    width: 180px;
+    padding: 19px;
+    text-align: center;
+    border: 1px solid $color-text;
+  }
+}
+
+.step--select {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 40%;
+
+  .form--info {
+    font-size: 24px;
+    margin-right: 26px;
+  }
+
+  .step__form--select {
+    display: flex;
+    align-items: center;
+  }
+
+  .form--select {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 300px;
+    height: 49px;
+    border: 1px solid $color-text;
+    cursor: pointer;
+  }
+
+  .select--list {
+    margin-top: 15px;
+    font-size: 24px;
+    text-align: center;
+    border: 1px solid $color-text;
+    width: 85px;
+    align-self: flex-end;
+
+    li {
+      padding: 10px;
+      cursor: pointer;
+    }
+  }
+
+  .list--localization {
+    align-self: flex-start;
+    width: 300px;
+    position: absolute;
+    top: 50px;
+    background: $color-background;
+  }
+
+  .select--selected {
+    position: relative;
+    height: 20px;
+    font-size: 24px;
+    margin-left: 50px;
+
+    &:after {
+      content: ' ';
+      position: absolute;
+      top: 12px;
+      left: -25px;
+      width: 20px;
+      height: 0;
+      border: 1px solid $color-text;
     }
 
-    .button {
-      margin-right: 20px;
+    &:before {
+      content: ' ';
+      position: absolute;
+      top: 12px;
+      right: -25px;
+      width: 20px;
+      height: 0;
+      border: 1px solid $color-text;
+    }
+  }
+}
+
+.address__container {
+  width: 100%;
+  display: flex;
+
+  .step__form--address, .step__form--date {
+    display: flex;
+    flex-direction: column;
+
+    label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
       font-size: 24px;
-      width: 180px;
-      padding: 19px;
-      text-align: center;
+    }
+
+    .step__form--inputs {
+      width: 60%;
+      height: 40px;
+      background: none;
+      border: 1px solid $color-text;
+    }
+
+    .step__form--textarea {
+      width: 60%;
+      height: 120px;
+      background: none;
+      resize: none;
       border: 1px solid $color-text;
     }
   }
 
-  .disabled {
-    display: none;
+  .step__form--date {
+    margin-left: 20px;
   }
+  .step__form--inputsDisabled {
+    border: none;
+    background: none;
+    text-align: center;
+  }
+  .step__form--textareaDisabled {
+    border: none;
+    background: none;
+    text-align: center;
+  }
+}
+
+.disabled {
+  display: none;
 }
