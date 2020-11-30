@@ -1,6 +1,4 @@
 import {createSlice} from "@reduxjs/toolkit";
-import {nextStep} from "../formSlice";
-import {useDispatch} from "react-redux/lib/hooks/useDispatch";
 
 export const stepSlice = createSlice({
     name: 'step',
@@ -48,13 +46,9 @@ export const stepSlice = createSlice({
                 localization: action.payload
             }
         },
-        onSubmit: (state, action) => {
-            action.payload.preventDefault();
-            console.log('submit');
-        }
     }
 });
 
-export const {onChange, setBags, setLocalization, onSubmit} = stepSlice.actions;
-export const selectStep = state => state.step;
+export const {onChange, setBags, setLocalization} = stepSlice.actions;
+export const selectForm = state => state.step;
 export default stepSlice.reducer;

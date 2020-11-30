@@ -4,14 +4,16 @@ import {
     onChange,
     setBags,
     setLocalization,
-    onSubmit,
-    selectStep,
+    selectForm,
 } from "./stepSlice";
 import arrowDown from '../../../../assets/Icon-Arrow-Down.svg';
 import arrowUp from '../../../../assets/Icon-Arrow-Up.svg';
+import tribal from '../../../../assets/Decoration.svg';
+import shirt from '../../../../assets/Icon-1.svg';
+import arrows from '../../../../assets/Icon-4.svg';
 
 const Step = ({step}) => {
-    const form = useSelector(selectStep);
+    const form = useSelector(selectForm);
     const dispatch = useDispatch();
     const [showMenu, setShowMenu] = useState(false);
     const [select, setSelect] = useState('wybierz');
@@ -100,7 +102,7 @@ const Step = ({step}) => {
                             <p className='form--info'> Liczba 60l worków:</p>
                             <div className='form--select' onClick={() => handleShowMenu()}>
                                 <p className='select--selected'>{select}</p>
-                                <img src={showMenu ? arrowUp : arrowDown}/>
+                                <img alt='arrow' src={showMenu ? arrowUp : arrowDown}/>
                             </div>
                         </div>
                         <ul className={showMenu ? 'select--list' : 'disabled'}>
@@ -160,14 +162,14 @@ const Step = ({step}) => {
                             <label><input className="step__form--checkbox"
                                           type='checkbox'
                                           name='helpGroups'
-                                          value='Dzieciom'
+                                          value='niepełnosprawnym'
                                           onChange={e => dispatch(onChange(e.target))}/>
                                 <span className="checkmark">niepełnosprawnym</span>
                             </label>
                             <label><input className="step__form--checkbox"
                                           type='checkbox'
                                           name='helpGroups'
-                                          value='Dzieciom'
+                                          value='osobom starszym'
                                           onChange={e => dispatch(onChange(e.target))}/>
                                 <span className="checkmark">osobom starszym</span>
                             </label>
@@ -259,6 +261,14 @@ const Step = ({step}) => {
                     <h2 className='step--title'>Podsumowanie Twojej darowizny</h2>
                     <div className="step__give">
                         <h3 className="step--subtitle">Oddajesz:</h3>
+                        <div className="step--row">
+                            <img src={shirt} alt='shirt'/>
+                            <p className="step--description">Worki: {form.bags}, {form.type}, {form.helpGroups.map(group => group + ', ')}</p>
+                        </div>
+                        <div className="step--row">
+                            <img src={arrows} alt='arrows'/>
+                            <p className="step--description">Dla lokalizacji: {form.localization}. {form.localizationSpecific}</p>
+                        </div>
                     </div>
                     <div className='address__container address__sum'>
                         <div className="step__form--address">
@@ -320,9 +330,15 @@ const Step = ({step}) => {
             )
         }
         case 6: {
-            <div className='form__steps'>
-                <h2 className='step--title'>Dziękujemy </h2>
+            return (
+            <div className='form__thankYou'>
+                <h2 className='step--title'>Dziękujemy za przesłanie formularza. Na maila prześlemy wszelkie informacje o odbiorze</h2>
+                <img src={tribal} alt='decoration'/>
             </div>
+            )
+        }
+        default: {
+
         }
     }
 }
